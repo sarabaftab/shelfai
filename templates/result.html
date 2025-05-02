@@ -1,0 +1,26 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Results</title>
+  </head>
+  <body>
+    <h2>✅ Product Data Fetched</h2>
+    <p><strong>Title:</strong> {{ data.title }}</p>
+    <p>
+      <strong>Price:</strong> {{ data.price.value }} {{ data.price.currency }}
+    </p>
+    <p><strong>Brand:</strong> {{ data.brand }}</p>
+    <p><strong>Stars:</strong> {{ data.stars }}</p>
+    <p><strong>Reviews Count:</strong> {{ data.reviewsCount }}</p>
+    <p><strong>Features:</strong></p>
+    <ul>
+      {% for feature in data.features %}
+      <li>{{ feature }}</li>
+      {% endfor %}
+    </ul>
+    <p><strong>Thumbnail:</strong></p>
+    <img src="{{ data.thumbnailImage }}" alt="Product image" width="200" />
+  </body>
+</html>
